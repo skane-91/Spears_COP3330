@@ -1,7 +1,10 @@
 package spears_p1;
-import java.util.*;
+import java.util.Scanner;
 
 /*
+ * UCF COP 3330 - KANE SPEARS
+ * PA2, P1
+ * 
  * A company that wants to send data over the Internet has 
  * asked you to write a program that will encrypt it so that 
  * it may be transmitted more securely. All the data is 

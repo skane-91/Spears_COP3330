@@ -2,6 +2,9 @@ package spears_p2;
 import java.util.Scanner;
 
 /* 
+ * UCF COP 3330 - KANE SPEARS
+ * PA2, P2
+ * 
  * Create a BMI calculator that reads the user’s 
  * weight and height (providing an option for the 
  * user to select which formula to use), and then 

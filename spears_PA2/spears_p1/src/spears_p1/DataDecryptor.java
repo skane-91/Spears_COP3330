@@ -1,7 +1,10 @@
 package spears_p1;
-import java.util.*;
+import java.util.Scanner;
 
 /*
+ * UCF COP 3330 - KANE SPEARS
+ * PA2, P1
+ * 
  * Write a separate application that inputs 
  * an encrypted four-digit integer and decrypts 
  * it (by reversing the encryption scheme) 

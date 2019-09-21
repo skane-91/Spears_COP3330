@@ -2,6 +2,9 @@ package spears_p3;
 import java.util.Scanner;
 
 /*
+ * UCF COP 3330 - KANE SPEARS
+ * PA2, P3
+ * 
  * Write a simple polling program that allows users to 
  * rate five topics from 1 (least important) to 10 (most 
  * important). Pick five topics that are important to 
