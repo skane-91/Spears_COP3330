@@ -29,7 +29,7 @@ public class BMICalc {
 			
 			bmi = (703 * weight) / (height * height);
 			
-			System.out.println(bmi);
+			System.out.printf("BMI: %.1f\n\n", bmi);
 		}
 		if (userInput == 2) {
 			System.out.print("Weight (in kilograms): ");
@@ -39,10 +39,29 @@ public class BMICalc {
 			
 			bmi = weight / (height * height);
 			
-			System.out.println(bmi);
+			System.out.printf("BMI: %.2f\n\n", bmi);
 		}
 		
-		System.out.println("");
+		System.out.println("*******************************");
+		System.out.println("*       BMI Categories        *");
+		System.out.println("* Underweight   < 18.5        *");
+		System.out.println("* Normal weight = 18.5 - 24.9 *");
+		System.out.println("* Overweight    = 25 - 29.9   *");
+		System.out.println("* Obese         > 30          *");
+		System.out.println("*******************************");
+		
+		if (bmi < 18.5) {
+			   System.out.println("Underweight");
+			}
+			if (bmi >= 18.5 && bmi <= 24.9) {
+			   System.out.println("Normal weight");
+			}
+			if (bmi >= 25 && bmi <= 29.9) {
+			   System.out.println("Overweight");
+			}
+			if (bmi >= 30) {
+			   System.out.println("Obese");
+		}
 	
 	}
 
