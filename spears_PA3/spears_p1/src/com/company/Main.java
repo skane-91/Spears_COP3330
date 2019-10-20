@@ -55,81 +55,91 @@ public class Main {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int userNum, num, difficulty, problemType, correct = 0, incorrect = 0;
+        int userNum, num, difficulty, problemType, choice, correct = 0, incorrect = 0;
         double average;
+        boolean repeat = true;
 
-        System.out.print("Please enter difficulty level: ");
-        difficulty = sc.nextInt();
-        while (difficulty < 1 && difficulty > 4) {
-            System.out.print("Invalid difficulty level.\nPlease enter difficulty level: ");
+        while(repeat) {
+            System.out.print("Please enter difficulty level: ");
             difficulty = sc.nextInt();
-        }
+            while (difficulty < 1 || difficulty > 4) {
+                System.out.print("Invalid difficulty level.\nPlease enter difficulty level: ");
+                difficulty = sc.nextInt();
+            }
 
-        System.out.print("Please choose problem type: ");
-        problemType = sc.nextInt();
-        while (problemType < 1 && problemType > 4) {
-            System.out.print("Invalid difficulty level.\nPlease enter difficulty level: ");
+            System.out.print("Please choose problem type: ");
             problemType = sc.nextInt();
-        }
+            while (problemType < 1 || problemType > 4) {
+                System.out.print("Invalid difficulty level.\nPlease enter difficulty level: ");
+                problemType = sc.nextInt();
+            }
 
-        for (int i = 0; i < 10; i++) {
-            num = randomQuestion(difficulty, problemType);
-            userNum = sc.nextInt();
-            Random rand = new Random();
-            int randNew = rand.nextInt(4) + 1;
-            if (userNum == num) {
-                correct++;
+            for (int i = 0; i < 10; i++) {
+                num = randomQuestion(difficulty, problemType);
+                userNum = sc.nextInt();
+                Random rand = new Random();
+                int randNew = rand.nextInt(4) + 1;
+                if (userNum == num) {
+                    correct++;
 
-                switch (randNew) {
-                    case 1:
-                        System.out.println("Very good!");
-                        break;
+                    switch (randNew) {
+                        case 1:
+                            System.out.println("Very good!");
+                            break;
 
-                    case 2:
-                        System.out.println("Excellent!");
-                        break;
+                        case 2:
+                            System.out.println("Excellent!");
+                            break;
 
-                    case 3:
-                        System.out.println("Nice work!");
-                        break;
+                        case 3:
+                            System.out.println("Nice work!");
+                            break;
 
-                    case 4:
-                        System.out.println("Keep up the good work!");
-                        break;
+                        case 4:
+                            System.out.println("Keep up the good work!");
+                            break;
 
-                    default:
-                        break;
-                }
-            } else {
-                incorrect++;
+                        default:
+                            break;
+                    }
+                } else {
+                    incorrect++;
 
-                switch (randNew) {
-                    case 1:
-                        System.out.println("No. Please try again.");
-                        break;
+                    switch (randNew) {
+                        case 1:
+                            System.out.println("No. Please try again.");
+                            break;
 
-                    case 2:
-                        System.out.println("Wrong. Try once more.");
-                        break;
+                        case 2:
+                            System.out.println("Wrong. Try once more.");
+                            break;
 
-                    case 3:
-                        System.out.println("Don't give up!");
-                        break;
+                        case 3:
+                            System.out.println("Don't give up!");
+                            break;
 
-                    case 4:
-                        System.out.println("No. Keep trying.");
-                        break;
+                        case 4:
+                            System.out.println("No. Keep trying.");
+                            break;
 
-                    default:
-                        break;
+                        default:
+                            break;
+                    }
                 }
             }
-        }
-        average = correct / (correct + incorrect) * 100;
-        if (average < 75.0) {
-            System.out.println("Please ask your teacher for extra help.");
-        } else {
-            System.out.println("Congratulations, you are ready to go to the next level!");
+            average = correct / (correct + incorrect) * 100;
+            if (average < 75.0) {
+                System.out.println("Please ask your teacher for extra help.");
+            } else {
+                System.out.println("Congratulations, you are ready to go to the next level!");
+            }
+
+            System.out.println("Click 1 if you would like to begin a new session.");
+            System.out.println("Click 2 if you would like to terminate the program.");
+            choice = sc.nextInt();
+            if(choice == 2) {
+                repeat = false;
+            }
         }
     }
 }
